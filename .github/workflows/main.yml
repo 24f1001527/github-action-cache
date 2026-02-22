@@ -12,11 +12,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Create cache folder
+        run: mkdir -p cache-folder
+
       - name: Cache dependencies
         id: cache-step
         uses: actions/cache@v4
         with:
-          path: ~/.cache
+          path: cache-folder
           key: cache-252336a
 
       - name: prime-cache-252336a
